@@ -1,1 +1,39 @@
-/**index.wxss**/
+/* 搜索框 */
+.searchBar {
+  background-color: #ff2d4a;
+  padding:20rpx 16rpx;
+}
+.searchBar .input {
+  height: 60rpx;
+  background-color: #fff;
+  border-radius: 8rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.searchBar .input image {
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 16rpx;
+}
+.searchBar .input text {
+  font-size: 24rpx;
+  color: #bbb;
+}
+/* 轮播图 */
+.swiper {
+  width: 750rpx;
+  height: 340rpx;
+}
+.swiper .swiper-item image {
+  width: 100%;
+}
+.nav {
+  display: flex;
+  width: 750rpx;
+  justify-content: space-around;
+}
+.nav image {
+  width: 128rpx;
+  height: 128rpx;
+}
