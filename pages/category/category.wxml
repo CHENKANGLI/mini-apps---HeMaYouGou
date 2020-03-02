@@ -1,2 +1,40 @@
-<!--pages/category/category.wxml-->
-<text>pages/category/category.wxml</text>
+<view class="container">
+  <!-- 搜索框 -->
+  <search />
+  <!-- 内容区 -->
+  <view class="content">
+    <!-- 分类 -->
+    <view class="content-left">
+      <block wx:for="{{categories}}" wx:key="index">
+        <navigator url="">
+          <view class="cat-item {{current===index ? 'active' : ''}}" bindtap="handleClick" data-index="{{index}}">
+            {{item.cat_name}}
+          </view>
+        </navigator>
+      </block>
+    </view>
+    <!-- 子分类 -->
+    <view class="content-right">
+      <block wx:for="{{categories}}" wx:key="index">
+        <view
+         class="detail"
+         wx:for="{{item.children}}" 
+         wx:for-item="child" 
+         wx:for-index="idx" 
+         wx:if="{{current===index}}">
+          <view class="title">
+            / <text>{{child.cat_name}}</text>/
+          </view>
+          <view class="brands">
+            <block wx:for="{{child.children}}" wx:for-item="brand" wx:for-index="i">
+              <navigator class="brands-item" url="/pages/goods_list/goods_list?keyword={{brand.cat_name}}">
+                <image src="{{brand.cat_icon}}" mode="aspectFit"></image>
+                <view class="brand-name">{{brand.cat_name}}</view>
+              </navigator>
+            </block>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

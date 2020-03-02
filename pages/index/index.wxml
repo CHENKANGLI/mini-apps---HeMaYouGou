@@ -1,39 +1,45 @@
-<!--index.wxml-->
 <view class="container">
-<!-- 搜索框 -->
-  <view class="searchBar">
-    <view class="input">
-      <image src="../../images/icon_search@2x.png"></image>
-      <text>搜索</text>
-    </view>
-  </view>
+  <!-- 搜索框 -->
+  <search />
   <!-- 轮播图 -->
   <view class="swiper">
-    <swiper 
-        indicator-dots="{{indicatorDots}}"
-        indicator-color="{{indicatorColor}}"
-        indicator-active-color="{{indicatorActiveColor}}"
-        autoplay="{{autoplay}}"
-        interval="{{interval}}"
-        duration="{{duration}}"
-        circular="{{circular}}">
-        <block wx:for="{{swiperImg}}" wx:key="index">
-          <swiper-item>
-            <view class="swiper-item {{item}}" mode="aspectFit">
-              <image src="{{item.image_src}}"></image>
-            </view>
-          </swiper-item>
-        </block>
-      </swiper>
+    <swiper indicator-dots="{{indicatorDots}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActiveColor}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
+      <block wx:for="{{swiperImg}}" wx:key="index">
+        <swiper-item>
+          <view class="swiper-item {{item}}" mode="aspectFit">
+            <image src="{{item.image_src}}"></image>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
   </view>
   <!-- 导航菜单 -->
   <view class="nav">
     <block wx:for="{{menus}}" wx:key='index'>
-      <navigator url="">
-       <image src="{{item.image_src}}"></image>
-    </navigator>
+      <navigator url="{{item.url}}" open-type="{{item.open_type}}">
+        <image src="{{item.image_src}}"></image>
+      </navigator>
     </block>
   </view>
   <!-- 楼层布局 -->
+    <view class="floor" 
+          wx:for="{{floorData}}" 
+          wx:key="index">
+      <image src="{{item.floor_title.image_src}}" mode="aspectFill" class="floor-title"></image>
+      <view class="floor-content">
+         <view class=" content-left">
+         <image src="{{item.product_list[0].image_src}}" mode="aspectFill"></image>
+         </view>
+         <view class="content-right">
+        <block wx:for="{{item.product_list}}" wx:key="index" wx:if="{{index>0}}">
+          <image src="{{item.image_src}}" mode="aspectFill"></image>
+        </block>
+      </view>
+      </view>
+    </view>
   <!-- 回到顶部 -->
+  <view class="toTop" wx:if="{{isShowBtn}}" bindtap="handleTotop">
+    <image src="../../images/arrow_top@2x.png"></image>
+    <text>顶部</text>
+  </view>
 </view>

@@ -1,0 +1,36 @@
+.searchBar {
+  background-color: #efefef;
+  padding:20rpx 16rpx;
+}
+.searchBar .input {
+  height: 60rpx;
+  background-color: #fff;
+  border-radius: 8rpx;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding-left: 25rpx;
+}
+.searchBar .input image {
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 16rpx;
+}
+.searchBar .input text {
+  font-size: 24rpx;
+  color: #000;
+}
+/* 过滤 */
+.filter {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100rpx;
+  border-bottom: 1px solid #dddddd;
+  font-size: 28rpx;
+}
+.filter .price image {
+  width: 16rpx;
+  height: 24rpx;
+  margin-left: 5rpx
+}

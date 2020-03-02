@@ -11,7 +11,9 @@ Page({
     duration:500,
     circular:true,
     // 导航菜单数据
-    menus:[]
+    menus:[],
+    floorData:[],
+    isShowBtn:false
   },
   onLoad(){
     // 加载轮播图数据
@@ -30,9 +32,48 @@ Page({
     }).then(res=>{
       // console.log(res)
       const { message } = res.data
-      this.setData({
-        menus: message,
+      const newData=message.map((v,i)=>{
+        if(i===0){
+          v.url="/pages/category/category"
+        }
+        return v;
       })
+      this.setData({
+        menus: newData,
+      })
+    })
+    // 楼层
+    request({
+      url:"/home/floordata"
+    }).then(res=>{
+      // console.log(res)
+      const { message } = res.data
+      this.setData({
+        floorData: message,
+      })
+    })
+  },
+  onPageScroll(e){
+    // console.log(e)
+    const {scrollTop} = e;
+    let isShow = this.data.isShowBtn;
+
+    if (scrollTop>100) {
+      isShow = true
+    } else {
+      isShow = false
+    }
+
+    if (isShow == this.data.isShowBtn) return;
+
+    this.setData({
+      isShowBtn: isShow
+    })
+  },
+  handleTotop(){
+    wx:wx.pageScrollTo({
+      scrollTop: 0,
+      duration: 1000,
     })
   }
 })

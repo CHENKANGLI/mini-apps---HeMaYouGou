@@ -1,0 +1,17 @@
+<view class="container">
+  <!-- 搜索框 -->
+  <view class="searchBar">
+    <navigator url="../../pages/search/search">
+      <view class="input">
+        <image src="../../images/icon_search@2x.png"></image>
+        <text>{{keyword}}</text>
+      </view>
+    </navigator>
+  </view>
+  <!-- 过滤 -->
+  <view class="filter">
+    <view class="composite">综合</view>
+    <view class="volume">销量</view>
+    <view class="price">价格<image src="../../images/icon_sort_down@2x.png" mode="aspectFit"></image></view>
+  </view>
+</view>

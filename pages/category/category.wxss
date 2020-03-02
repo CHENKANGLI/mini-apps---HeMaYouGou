@@ -1,1 +1,63 @@
-/* pages/category/category.wxss */
+.content {
+  position: fixed;
+  top: 100rpx;
+  bottom: 0;
+  width: 750rpx;
+  display: flex;
+}
+.content-left {
+  width: 200rpx;
+  height: 100%;
+  overflow: auto;
+  flex-shrink: 0;
+}
+.content-left .cat-item {
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  border-bottom: 1px solid #eee;
+  background-color: #f4f4f4;
+  font-size: 26rpx;
+}
+.active {
+  background-color: #ffffff!important;
+  color: #eb4450;
+}
+.active::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 37rpx;
+  left: 0;
+  height: 26rpx;
+  width: 5rpx;
+  backgound-color: #eb4450;
+}
+.content-right {
+  flex: 1;
+  overflow: auto;
+}
+.content-right .title {
+  font-size: 26rpx;
+  color: #e8e8e8;
+  text-align: center;
+  margin: 40rpx 0;
+}
+.content-right .title text {
+  color: #000;
+}
+.content-right .brands {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: left;
+}
+.content-right .brands-item {
+  width:180rpx;
+  font-size: 20rpx;
+  text-align: center
+}
+.content-right .brands-item image {
+  width: 100rpx;
+  height: 120rpx
+}

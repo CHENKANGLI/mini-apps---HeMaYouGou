@@ -1,0 +1,8 @@
+<view class="searchBar">
+  <navigator url="../../pages/search/search">
+    <view class="input">
+      <image src="../../images/icon_search@2x.png"></image>
+      <text>{{keyword}}</text>
+    </view>
+  </navigator>
+</view>
