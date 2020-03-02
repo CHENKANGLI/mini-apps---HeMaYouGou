@@ -1,7 +1,8 @@
 .searchBar {
   background-color: #efefef;
-  padding:20rpx 16rpx;
+  padding: 20rpx 16rpx;
 }
+
 .searchBar .input {
   height: 60rpx;
   background-color: #fff;
@@ -11,26 +12,73 @@
   align-items: center;
   padding-left: 25rpx;
 }
+
 .searchBar .input image {
   width: 32rpx;
   height: 32rpx;
   margin-right: 16rpx;
 }
+
 .searchBar .input text {
   font-size: 24rpx;
   color: #000;
 }
+
 /* 过滤 */
+
 .filter {
   display: flex;
   justify-content: space-around;
   align-items: center;
   height: 100rpx;
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid #ddd;
   font-size: 28rpx;
 }
+
 .filter .price image {
   width: 16rpx;
   height: 24rpx;
-  margin-left: 5rpx
+  margin-left: 5rpx;
+}
+
+/* 商品列表 */
+
+.list {
+  width: 750rpx;
+}
+
+.product {
+  padding: 30rpx;
+  display: flex;
+  border-bottom: 1px solid #ddd;
+}
+
+.product image {
+  width: 200rpx;
+  height: 200rpx;
+  flex-shrink: 0;
+}
+
+.product .detail {
+  padding-left: 25rpx;
+  font-size: 28rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product .detail .title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.product .detail .price {
+  color: #eb4450;
+  font-size: 20rpx;
+  padding-left: 10rpx;
+}
+.product .detail .price text {
+  font-size: 32rpx;
 }
