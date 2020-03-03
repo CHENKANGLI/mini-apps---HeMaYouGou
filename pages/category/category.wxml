@@ -19,6 +19,7 @@
         <view
          class="detail"
          wx:for="{{item.children}}" 
+         wx:key="index"
          wx:for-item="child" 
          wx:for-index="idx" 
          wx:if="{{current===index}}">
@@ -26,7 +27,7 @@
             / <text>{{child.cat_name}}</text>/
           </view>
           <view class="brands">
-            <block wx:for="{{child.children}}" wx:for-item="brand" wx:for-index="i">
+            <block wx:for="{{child.children}}" wx:key="index" wx:for-item="brand" wx:for-index="i">
               <navigator class="brands-item" url="/pages/goods_list/goods_list?keyword={{brand.cat_name}}">
                 <image src="{{brand.cat_icon}}" mode="aspectFit"></image>
                 <view class="brand-name">{{brand.cat_name}}</view>

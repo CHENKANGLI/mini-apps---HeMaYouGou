@@ -82,3 +82,12 @@
 .product .detail .price text {
   font-size: 32rpx;
 }
+.fresh {
+  width: 750rpx;
+  height: 100rpx;
+  background-color: #ddd;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 30rpx;
+  color: #666;
+}

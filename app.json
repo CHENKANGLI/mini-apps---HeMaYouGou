@@ -5,6 +5,7 @@
     "pages/cart/cart",
     "pages/personal/personal",
     "pages/goods_list/goods_list",
+    "pages/goods_detail/goods_detail",
     "pages/search/search"
   ],
   "window": {
