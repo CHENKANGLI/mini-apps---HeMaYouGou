@@ -1,4 +1,4 @@
-// pages/search/search.js
+import request from "../../utils/request.js"
 Page({
 
   /**
@@ -17,6 +17,13 @@ Page({
   onLoad: function (options) {
 
   },
-
-  
+  // 商品搜索
+  searchData(){
+    request({
+      url:"/goods/qsearch",
+      query:this.data.inputValue
+    }).then(res=>{
+      console.log(res)
+    })
+  }
 })

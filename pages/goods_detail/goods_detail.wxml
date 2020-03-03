@@ -1,16 +1,43 @@
 <view class="detail">
   <view class="swiper">
-    <swiper indicator-dots="{{indicatorDots}}"
-        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-        <block wx:for="{{background}}" wx:key="*this">
-          <swiper-item>
-            <view class="swiper-item {{item}}"></view>
-          </swiper-item>
-        </block>
-      </swiper>
+    <swiper 
+    indicator-dots="{{indicatorDots}}" 
+    indicator-color="{{indicatorColor}}" 
+    indicator-active-color="{{indicatorActiveColor}}" 
+    autoplay="{{autoplay}}" 
+    interval="{{interval}}" 
+    duration="{{duration}}" 
+    circular="{{circular}}">
+      <!-- 列表渲染 -->
+      <block wx:for="{{detail.pics}}" wx:key="index">
+        <swiper-item>
+          <view class="swiper-item" mode="aspectFill">
+            <image src="{{item.pics_big}}"></image>
+          </view>
+        </swiper-item>
+      </block>
+
+    </swiper>
+  </view>
+  <view class="title">
+    <view class="price">￥{{detail.goods_price}}</view>
+    <view class="mid">
+    <view class="name">{{detail.goods_name}}</view>
+    <view class="collect"><text class="iconfont iconshoucang">收藏</text></view>
+    </view>
+    <view class="post">快递: 免运费</view>
   </view>
 
 
-
-
+  <!-- 底部栏 -->
+  <view class="buy">
+    <view class="left">
+      <view>联系客服</view>
+      <view>购物车</view>
+    </view>
+    <view class="right">
+      <view class="addCart">加入购物车</view>
+      <view class="buyNow">立即购买</view>
+    </view>
+  </view>
 </view>

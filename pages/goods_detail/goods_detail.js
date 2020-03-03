@@ -6,7 +6,16 @@ Page({
    */
   data: {
     goods_id:'',
-    detail:{}
+    detail:{
+      pics:[]
+    },
+    indicatorDots: true,
+    indicatorColor: 'rgba(225,225,225,.3)',
+    indicatorActiveColor: "#fff",
+    autoplay: true,
+    interval: 2000,
+    duration: 500,
+    circular: true,
   },
 
   /**
@@ -21,10 +30,14 @@ Page({
     request({
       url:"/goods/detail",
       data:{
-        query:this.data.goods_id
+        goods_id:this.data.goods_id
       }
     }).then(res=>{
       console.log(res)
+      const {message} = res.data
+      this.setData({
+        detail:message
+      })
     })
   },
 

@@ -1,1 +1,70 @@
-/* pages/goods_detail/goods_detail.wxss */
+.detail {
+  width: 750rpx;
+}
+.swiper swiper {
+  width: 100%;
+  height: 720rpx;
+}
+.swiper .swiper-item image {
+  width: 750rpx;
+  height: 720rpx;
+}
+.title {
+  padding: 40rpx 20rpx;
+}
+.title .price {
+  color: #ff2d4a;
+  font-size: 36rpx;
+}
+.title .mid {
+  margin: 40rpx 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.title .mid .name {
+  flex: 1;
+  border-right: 1px solid #ddd; 
+  padding-right: 20rpx;
+}
+.title .mid .collect {
+  width: 140rpx;
+  text-align: center;
+}
+.title .post {
+  color: #999;
+}
+.buy {
+  width: 750rpx;
+  height: 100rpx;
+  position: absolute;
+  top: calc(100vh-100rpx);
+  bottom: 0;
+  display: flex;
+}
+.buy .left {
+  width: 330rpx;
+  display: flex;
+}
+.buy .left view {
+  width: 50%;
+  text-align: center;
+  color: #666;
+  line-height: 100rpx;
+}
+.buy .right {
+  flex: 1;
+  display: flex;
+}
+.buy .right view {
+  width: 50%;
+  text-align: center;
+  color: #fff;
+  line-height: 100rpx;
+}
+.buy .right .addCart {
+  background-color: #f4b73f;
+}
+.buy .right .buyNow {
+  background-color: #eb4450;
+}
