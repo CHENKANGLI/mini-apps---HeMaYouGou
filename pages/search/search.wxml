@@ -1,2 +1,55 @@
-<!--pages/search/search.wxml-->
-<text>pages/search/search.wxml</text>
+<view class="container">
+  <!-- 真搜索框 -->
+  <view class="search">
+    <view class="search-input">
+      <input class="realInput" placeholder="请输入您想要的商品"></input>
+      <icon type="search"></icon>
+    </view>
+    <view class="cancel">取消</view>
+  </view>
+
+  <!-- 历史记录 -->
+  <view class="history">
+    <view class="title">
+      <view>历史搜索</view>
+      <icon type="clear" size="20"></icon>
+    </view>
+    <view class="list">
+      <block>
+        <view>小米</view>
+        <view>小米aweassaf</view>
+        <view>小米gfdfhcv</view>
+        <view>小米31543</view>
+        <view>小米45223</view>
+        <view>小米</view>
+        <view>小米123</view>
+        <view>小米3545436</view>
+        <view>小米</view>
+      </block>
+    </view>
+  </view>
+
+  <!-- 搜索建议列表 -->
+  <view class="suggest">
+    <block>
+       <view>
+         蒙古海军天下无敌
+       </view>
+       <view>
+         印度瑜伽包治百病
+       </view>
+       <view>
+         日本电影年年畅销
+       </view>
+       <view>
+         蒙古海军天下无敌
+       </view>
+       <view>
+         蒙古海军天下无敌
+       </view>
+       <view>
+         蒙古海军天下无敌
+       </view>
+    </block>
+  </view>
+</view>
