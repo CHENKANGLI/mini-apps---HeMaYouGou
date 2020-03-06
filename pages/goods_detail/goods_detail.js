@@ -7,7 +7,8 @@ Page({
   data: {
     goods_id:'',
     detail:{
-      pics:[]
+      pics:[],
+      attrs:[]
     },
     indicatorDots: true,
     indicatorColor: 'rgba(225,225,225,.3)',
@@ -16,6 +17,8 @@ Page({
     interval: 2000,
     duration: 500,
     circular: true,
+    current:0,
+    preViewUrls:[],
   },
 
   /**
@@ -35,10 +38,32 @@ Page({
     }).then(res=>{
       console.log(res)
       const {message} = res.data
+      const preViewUrls =message.pics.map((v,i)=>{
+       return v.pics_big_url
+      })
       this.setData({
-        detail:message
+        detail:message,
+        preViewUrls
       })
     })
   },
-
+  handleTab(e){
+    // console.log(e)
+    const { index } = e.currentTarget.dataset
+    this.setData({
+      current: index
+    })
+  },
+  handlePreview(e){
+    const { idx } = e.currentTarget.dataset
+    wx.previewImage({
+      current: this.data.preViewUrls[idx], // 当前显示图片的http链接
+      urls: this.data.preViewUrls // 需要预览的图片http链接列表
+    })
+  },
+  jumpToCart(){
+    wx.switchTab({
+      url: '/pages/cart/cart'
+    })
+  }
 })

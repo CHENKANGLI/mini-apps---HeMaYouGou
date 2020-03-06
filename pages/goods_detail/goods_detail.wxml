@@ -1,39 +1,63 @@
 <view class="detail">
-  <view class="swiper">
-    <swiper 
-    indicator-dots="{{indicatorDots}}" 
-    indicator-color="{{indicatorColor}}" 
-    indicator-active-color="{{indicatorActiveColor}}" 
-    autoplay="{{autoplay}}" 
-    interval="{{interval}}" 
-    duration="{{duration}}" 
-    circular="{{circular}}">
-      <!-- 列表渲染 -->
-      <block wx:for="{{detail.pics}}" wx:key="index">
-        <swiper-item>
-          <view class="swiper-item" mode="aspectFill">
-            <image src="{{item.pics_big}}"></image>
-          </view>
-        </swiper-item>
-      </block>
-
-    </swiper>
-  </view>
+  <!-- 轮播图 -->
+  <swiper 
+  class="swiper" 
+  indicator-dots="{{indicatorDots}}" 
+  indicator-color="{{indicatorColor}}" 
+  indicator-active-color="{{indicatorActiveColor}}" 
+  autoplay="{{autoplay}}" 
+  interval="{{interval}}" 
+  duration="{{duration}}" 
+  circular="{{circular}}">
+    <!-- 列表渲染 -->
+    <block wx:for="{{detail.pics}}" wx:key="index">
+      <swiper-item>
+        <image src="{{item.pics_big}}" mode="aspectFill" bindtap="handlePreview" data-idx="{{index}}"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- 商品标题 -->
   <view class="title">
     <view class="price">￥{{detail.goods_price}}</view>
     <view class="mid">
-    <view class="name">{{detail.goods_name}}</view>
-    <view class="collect"><text class="iconfont iconshoucang">收藏</text></view>
+      <view class="name">{{detail.goods_name}}</view>
+      <view class="collect">
+        <view class="iconfont icon-shoucang"></view>
+        <text>收藏</text>
+      </view>
     </view>
     <view class="post">快递: 免运费</view>
   </view>
-
-
+  <!-- tab栏 -->
+  <view class="tab">
+    <view wx:for="{{['详情','规格']}}" wx:key="index" 
+    class="{{current==index?'active':''}}" 
+    bindtap="handleTab" data-index="{{index}}">
+      {{item}}
+    </view>
+  </view>
+  <!-- 富文本 -->
+  <view class="richTxt" wx:if="{{current==0}}">
+    <rich-text nodes="{{detail.goods_introduce}}"></rich-text>
+  </view>
+  <view class="spec" wx:if="{{current==1}}">
+    <view wx:for="{{detail.attrs}}" wx:key="index">
+      <text>{{item.attr_name}}：</text>
+      <text>{{item.attr_vals}}</text>
+    </view>
+  </view>
   <!-- 底部栏 -->
   <view class="buy">
     <view class="left">
-      <view>联系客服</view>
-      <view>购物车</view>
+      <view>
+        <button open-type="contact" class="service"></button>
+        <view class="iconfont icon-kefu"></view>
+        <text>联系客服</text>
+      </view>
+      <view bindtap="jumpToCart">
+        <view class="iconfont icon-gouwuche"></view>
+        <text>购物车</text>
+      </view>
     </view>
     <view class="right">
       <view class="addCart">加入购物车</view>

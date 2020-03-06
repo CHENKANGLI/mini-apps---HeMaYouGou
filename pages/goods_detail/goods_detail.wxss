@@ -1,13 +1,14 @@
 .detail {
-  width: 750rpx;
+  position: relative;
+  padding-bottom: 100rpx; 
 }
-.swiper swiper {
-  width: 100%;
-  height: 720rpx;
-}
-.swiper .swiper-item image {
+.swiper {
   width: 750rpx;
-  height: 720rpx;
+  height: 750rpx;
+}
+.swiper image {
+  width: 750rpx;
+  height: 750rpx;
 }
 .title {
   padding: 40rpx 20rpx;
@@ -26,31 +27,72 @@
   flex: 1;
   border-right: 1px solid #ddd; 
   padding-right: 20rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp:2;
+  overflow: hidden;
 }
 .title .mid .collect {
   width: 140rpx;
   text-align: center;
+  color: #999;
+  font-size: 25rpx;
 }
 .title .post {
   color: #999;
+  font-size: 25rpx;
 }
+.tab {
+  width: 750rpx;
+  height: 80rpx;
+  display: flex;
+  border-top: 20rpx solid #eee;
+}
+.tab view {
+  flex: 1;
+  text-align: center;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.tab .active {
+  color: #fff;
+  background-color: #ff2d4a;
+}
+
+
+
 .buy {
   width: 750rpx;
   height: 100rpx;
-  position: absolute;
-  top: calc(100vh-100rpx);
+  position: fixed;
+  left: 0;
   bottom: 0;
   display: flex;
+  box-shadow: 0 2rpx 3rpx 4rpx #ddd;
 }
 .buy .left {
   width: 330rpx;
   display: flex;
 }
+.buy .left .service {
+  width: 165rpx;
+  height: 100rpx;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  opacity: 0;
+}
 .buy .left view {
   width: 50%;
-  text-align: center;
   color: #666;
-  line-height: 100rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+.buy .left view text {
+  font-size: 25rpx;
 }
 .buy .right {
   flex: 1;
@@ -61,6 +103,7 @@
   text-align: center;
   color: #fff;
   line-height: 100rpx;
+  font-size: 30rpx;
 }
 .buy .right .addCart {
   background-color: #f4b73f;
