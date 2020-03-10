@@ -16,7 +16,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.10.2",
-	"appid": "wx58d96b1111783ecc",
+	"appid": "wxfb52f2d7b2f6123a",
 	"projectname": "HeMaYouGou",
 	"debugOptions": {
 		"hidedInDevtools": []
@@ -50,8 +50,8 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "pages/goods_detail/goods_detail",
-					"pathName": "pages/goods_detail/goods_detail",
+					"name": "pages/search/search",
+					"pathName": "pages/search/search",
 					"query": "",
 					"scene": null
 				}

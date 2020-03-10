@@ -1,2 +1,36 @@
-<!--pages/cart/cart.wxml-->
-<text>pages/cart/cart.wxml</text>
+<view class="cart">
+  <view class="userInfo">
+    <view class="personalInfo">
+      <view class="name">收货人：苏</view>
+      <view class="tel">
+        13535337057
+        <view class="arrow-right"></view>
+      </view>
+    </view>
+    <view class="address">
+      收货地址：广东省广州市天河区珠吉路吉山幼儿园
+    </view>
+  </view>
+    <image src="../../images/cart_border@2x.png" mode="aspectFill" class="line"></image>
+  <view class="store">
+    <view class="iconfont icon-dianpu"></view>
+    <view>优购生活馆</view>
+  </view>
+  <view class="goods">
+    <view class="goods_item">
+      <icon type="success" color="red"></icon>
+      <image src="https://dss0.bdstatic.com/-0U0bnSm1A5BphGlnYG/tam-ogel/299c55e31d7f50ae4dc85faa90d6f445_121_121.jpg" mode="aspectFill"></image>
+      <view class="goods_info">
+        <view class="goods_name">ECCO爱步女鞋春夏2020年新款老爹鞋 头层牛皮GTX防水透气户外鞋女士休闲鞋 翱翔880183 色/明黄色88018351766 35</view>
+        <view class="select">
+          <view class="price">￥<text>279.00</text></view>
+          <view class="number">
+             <view class="calcBtn">-</view>
+             <input value="3" type="number"></input>
+             <view class="calcBtn">+</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
